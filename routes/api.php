@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\TaskController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -30,4 +31,9 @@ Route::get('/posts/{id}', [PostController::class, 'getPostById']);
 
 
 Route::post('/register', [RegistrationController::class, 'Registration']);
+
+
+Route::post('/tasks', [TaskController::class, 'addTask']);
+Route::patch('/tasks/{id}/complete', [TaskController::class, 'markCompleted']);
+Route::get('/tasks/pending', [TaskController::class, 'getPendingTasks']);
 
