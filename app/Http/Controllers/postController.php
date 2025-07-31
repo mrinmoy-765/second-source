@@ -41,4 +41,19 @@ class postController extends Controller
         return response()->json($posts);
       }
 
+    //get post by id
+    public function getPostById($id){
+        
+    $post = Post::find($id);
+
+    if ($post) {
+        return response()->json($post);
+    } else {
+        return response()->json([
+            'message' => 'Post not found.'
+        ], 404);
+    }
+}
+ 
+
 }
