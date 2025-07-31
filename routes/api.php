@@ -22,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::post('/posts', [PostController::class, 'createPost']);
+Route::get('/posts', [PostController::class, 'getAllPosts']);

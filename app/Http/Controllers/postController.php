@@ -33,4 +33,12 @@ class postController extends Controller
 
         return response()->json($post, 201);
     }
+
+    //get all posts
+    public function getAllPosts()
+      {
+        $posts = Post::all(); 
+        return response()->json($posts);
+      }
+
 }
